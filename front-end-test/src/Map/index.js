@@ -11,7 +11,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-77.032, 38.913],
+        coordinates: [3.72118848923, 51.0539830091],
       },
       properties: {
         title: "Mapbox",
@@ -22,7 +22,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-122.414, 37.776],
+        coordinates: [3.72377493158, 51.0540293329],
       },
       properties: {
         title: "Mapbox",
