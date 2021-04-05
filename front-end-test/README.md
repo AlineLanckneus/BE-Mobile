@@ -5,12 +5,11 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Features](#features)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
 
 ## General info
 This web application was built as an exercise. It uses Mapbox GL JS to visualise the map and an API endpoint provided by the city of Ghent. It displays markers for each bike parking and clicking on the marker reveals their real time occupation. This data is refreshed every 60 seconds.
+
+There are react wrappers available for mapbox gl such as react-mapbox-gl and react-map-gl but for simplicity's sake I decided to not use these and just use mapbox gl as described on their website. I might however remake the application using these wrappers as an exercise in the future.
 
 ## Technologies
 * React.js - version 17.0.2
