@@ -14,8 +14,8 @@ const geojson = {
         coordinates: [3.72118848923, 51.0539830091],
       },
       properties: {
-        title: "Mapbox",
-        description: "Washington, D.C.",
+        title: "Fietsenstalling 1",
+        description: "Gent",
       },
     },
     {
@@ -25,8 +25,8 @@ const geojson = {
         coordinates: [3.72377493158, 51.0540293329],
       },
       properties: {
-        title: "Mapbox",
-        description: "San Francisco, California",
+        title: "Fietsenstalling 2",
+        description: "Gent",
       },
     },
   ],
@@ -63,7 +63,15 @@ const Map = () => {
       el.className = "marker";
 
       // make a marker for each feature and add to the map
-      new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({offset: 25}) // add popups
+            .setHTML(
+              "<h3>" + marker.properties.title + "</h3><p>" + marker.properties.description + "</p>"
+            )
+        )
+        .addTo(map);
     });
     // Clean up on unmount
     return () => map.remove();
