@@ -1,29 +1,26 @@
 import axios from "axios";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, {useEffect, useState} from "react";
-import "./App.css";
 import Map from "./Map/index";
+const API_URL =
+  "https://data.stad.gent/api/records/1.0/search/?dataset=real-time-bezettingen-fietsenstallingen-gent&q=&facet=facilityname";
 
 const App = () => {
   const [records, setRecords] = useState([]);
-  useEffect(() => {
+  const getDataFromAPI = async () => {
     axios
-      .get(
-        "https://data.stad.gent/api/records/1.0/search/?dataset=real-time-bezettingen-fietsenstallingen-gent&q=&facet=facilityname"
-      )
+      .get(API_URL)
       .then((response) => setRecords(response.data.records))
       .catch((error) => console.log(error.message));
-  }, [records.length]);
-  return (
-    <div>
-      <div>
-        {records.map((r) => (
-          <div>{r.geometry.coordinates}</div>
-        ))}
-      </div>
-      <Map />
-    </div>
-  );
+  };
+  useEffect(() => {
+    getDataFromAPI();
+    const interval = setInterval(() => {
+      getDataFromAPI();
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+  return <div>{records && records.length > 0 && <Map records={records} />}</div>;
 };
 
 export default App;
