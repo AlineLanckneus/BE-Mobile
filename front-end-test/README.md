@@ -18,6 +18,6 @@ There are react wrappers available for mapbox gl such as react-mapbox-gl and rea
 
 ## Setup
 To run this project, install it locally using npm:
-cd front-end-test/
-npm install
-npm start
+* cd front-end-test/
+* npm install
+* npm start
