@@ -18,7 +18,6 @@ export const FONT_WEIGHTS = {
   bold: 700,
 };
 
-export const HEIGHTS = {};
 export const SPACINGS = {
   xxs: "4px",
   xs: "8px",
