@@ -21,3 +21,8 @@ To run this project, install it locally using npm:
 * cd front-end-test/
 * npm install
 * npm start
+
+## Todos
+
+* Add error handling
+* Replace markers with better ones
